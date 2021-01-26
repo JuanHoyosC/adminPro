@@ -1,1 +1,40 @@
-<p>progress works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-primary progress-bar-striped active" role="progressbar"
+                        style="height:5px;" [ngStyle]="{'width':progreso1 + '%'}"> 
+                    </div>
+                </div>
+
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-info progress-bar-striped active" role="progressbar"
+                        style="height:5px;" [ngStyle]="{'width':progreso2 + '%'}"> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incrementador [progreso]="progreso1" (cambioValor)="progreso1 = $event"></app-incrementador>       
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incrementador [progreso]="progreso2" [bgButton]="'btn-info'"
+                (cambioValor)="progreso2 = $event"></app-incrementador>
+            </div>
+        </div>
+    </div>
+</div>
